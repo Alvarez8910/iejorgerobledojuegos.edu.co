@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ley de Charles y Ley de Gay-Lussac - Quiz</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Ley de Charles y Ley de Gay-Lussac</h1>
+        <div id="puntuacion">Puntuación: 0</div>
+    </header>
+ 
+    <main>
+
+        <section class="tema" id="tema3" style="display: none;">
+            <h2>Ley de Charles y Ley de Gay-Lussac</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué establece la Ley de Charles sobre el volumen y la temperatura de un gas?</p>
+                <input type="text" id="respuesta3-1" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 1, 'el volumen de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback3-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué unidades de temperatura deben usarse en la Ley de Charles?</p>
+                <input type="text" id="respuesta3-2" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 2, 'kelvin')">Verificar</button>
+                <p id="feedback3-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Cuál es la ecuación básica de la Ley de Charles?</p>
+                <input type="text" id="respuesta3-3" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 3, 'v1/t1 = v2/t2')">Verificar</button>
+                <p id="feedback3-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué establece la Ley de Gay-Lussac sobre la presión y la temperatura de un gas?</p>
+                <input type="text" id="respuesta3-4" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 4, 'la presión de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback3-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Cuál es la ecuación de la Ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta3-5" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 5, 'p1/t1 = p2/t2')">Verificar</button>
+                <p id="feedback3-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Por qué deben mantenerse constantes el volumen y la cantidad de gas en la Ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta3-6" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 6, 'para que la relación entre presión y temperatura se mantenga proporcional')">Verificar</button>
+                <p id="feedback3-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Cómo afectan los cambios de temperatura a la presión en un recipiente cerrado según Gay-Lussac?</p>
+                <input type="text" id="respuesta3-7" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 7, 'a mayor temperatura, mayor presión')">Verificar</button>
+                <p id="feedback3-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué sucede con el volumen si la temperatura de un gas se reduce a la mitad según la Ley de Charles?</p>
+                <input type="text" id="respuesta3-8" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 8, 'el volumen también se reduce a la mitad')">Verificar</button>
+                <p id="feedback3-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es un proceso isobárico?</p>
+                <input type="text" id="respuesta3-9" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 9, 'un proceso en el que la presión permanece constante')">Verificar</button>
+                <p id="feedback3-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Cuál es la diferencia clave entre la Ley de Charles y la Ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta3-10" autocomplete="off">
+                <button onclick="verificarRespuesta(3, 10, 'charles relaciona volumen y temperatura, gay-lussac relaciona presión y temperatura')">Verificar</button>
+                <p id="feedback3-10"></p>
+            </div>
+            <button onclick="irATema(4)">Siguiente Tema</button>
+        </section>
+        
+        
+    </main>
+
+    <script src="tema.js"></script>
+</body>
+</html>

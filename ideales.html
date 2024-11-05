@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gases Ideales - Quiz</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Gases Ideales</h1>
+        <div id="puntuacion">Puntuación: 0</div>
+    </header>
+ 
+    <main>
+
+        <!-- Tema: Gases Ideales -->
+<section class="tema" id="temaGasesIdeales" style="display: none;">
+    <h2>Gases Ideales</h2>
+    <div class="pregunta">
+        <p>Pregunta 1: ¿Cuál es la ecuación general de los gases ideales?</p>
+        <input type="text" id="respuestaGases-1" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 1, 'PV=nRT')">Verificar</button>
+        <p id="feedbackGases-1"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 2: ¿Qué representa la constante R en la ecuación de los gases ideales?</p>
+        <input type="text" id="respuestaGases-2" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 2, 'constante de los gases')">Verificar</button>
+        <p id="feedbackGases-2"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 3: ¿Cuáles son las unidades típicas de la constante de los gases ideales R?</p>
+        <input type="text" id="respuestaGases-3" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 3, '0.0821 atm L / mol K')">Verificar</button>
+        <p id="feedbackGases-3"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 4: ¿Cómo afecta la temperatura a la presión en un gas ideal, manteniendo el volumen constante?</p>
+        <input type="text" id="respuestaGases-4" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 4, 'aumenta')">Verificar</button>
+        <p id="feedbackGases-4"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 5: ¿Qué ocurre con el volumen de un gas si se aumenta la cantidad de gas a temperatura y presión constantes?</p>
+        <input type="text" id="respuestaGases-5" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 5, 'aumenta')">Verificar</button>
+        <p id="feedbackGases-5"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 6: ¿En qué unidades se suele expresar la presión en la ecuación de los gases ideales?</p>
+        <input type="text" id="respuestaGases-6" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 6, 'atm')">Verificar</button>
+        <p id="feedbackGases-6"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 7: ¿Cuál es el valor aproximado de la constante de los gases ideales en J/(mol K)?</p>
+        <input type="text" id="respuestaGases-7" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 7, '8.314')">Verificar</button>
+        <p id="feedbackGases-7"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 8: ¿Qué es un gas ideal?</p>
+        <input type="text" id="respuestaGases-8" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 8, 'un gas que cumple PV=nRT')">Verificar</button>
+        <p id="feedbackGases-8"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 9: ¿Qué ocurre con el volumen de un gas si se disminuye la presión, manteniendo la temperatura constante?</p>
+        <input type="text" id="respuestaGases-9" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 9, 'aumenta')">Verificar</button>
+        <p id="feedbackGases-9"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 10: ¿Cuál es la relación entre volumen y temperatura en un gas ideal a presión constante?</p>
+        <input type="text" id="respuestaGases-10" autocomplete="off">
+        <button onclick="verificarRespuesta('GasesIdeales', 10, 'directamente proporcional')">Verificar</button>
+        <p id="feedbackGases-10"></p>
+    </div>
+</section>
+
+    </main>
+
+    <script src="tema.js"></script>
+</body>
+</html>

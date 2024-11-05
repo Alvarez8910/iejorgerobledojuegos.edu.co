@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Math Challenge</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #80deea);
+            color: #333;
+            line-height: 1.6;
+        }
+        #game-container {
+            display: flex;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        #problem-panel {
+            flex: 1;
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        #hud {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #ffeb3b; /* Color amarillo brillante */
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        input {
+            padding: 12px;
+            margin: 5px 0;
+            width: calc(100% - 20px);
+            border: 2px solid #007bff; /* Borde azul */
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: #4CAF50; /* Verde */
+            color: white;
+            border: none;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #45a049; /* Verde oscuro */
+            transform: scale(1.05); /* Aumenta el tamaño del botón */
+        }
+        #formula-reference, #explanation {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e1f5fe; /* Fondo azul claro */
+            border-left: 5px solid #0288d1; /* Borde azul oscuro */
+            border-radius: 5px;
+        }
+        h3 {
+            color: #1976d2; /* Azul oscuro */
+        }
+        h4 {
+            margin: 10px 0;
+            color: #f57c00; /* Naranja */
+        }
+        /* Estilos del modal */
+        #gameOverModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #correctMessage {
+            display: none;
+            margin-top: 20px;
+            padding: 12px;
+            background: #c8e6c9; /* Fondo verde claro */
+            color: #2e7d32; /* Verde oscuro */
+            border-left: 5px solid #388e3c; /* Borde verde */
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="problem-panel">
+            <div id="hud">
+                Nivel: <span id="level">1</span>/20 | 
+                Vidas: <span id="lives">3</span> | 
+                Puntuación: <span id="score">0</span>
+            </div>
+            <div id="problem"></div>
+            <div id="inputs"></div>
+            <button onclick="checkAnswer()">Verificar Respuesta</button>
+            <div id="formula-reference"></div>
+            <div id="explanation" style="display: none;"></div>
+            <div id="correctMessage">¡Respuesta Correcta!</div> <!-- Mensaje de respuesta correcta -->
+        </div>
+    </div>
+
+    <!-- Modal de Game Over -->
+    <div id="gameOverModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>¡Juego Terminado!</h2>
+            <p>Puntuación final: <span id="finalScore"></span></p>
+            <button onclick="resetGame()">Reiniciar Juego</button>
+        </div>
+    </div>
+
+    <script>
+        let currentLevel = 1;
+        let lives = 3;
+        let score = 0;
+        let currentProblem = null;
+        let questionCount = 0; // Contador de preguntas
+
+        const problemTypes = {
+            easy: [
+                {
+                    type: 'velocity',
+                    generate: () => {
+                        const distance = Math.floor(Math.random() * 100) + 20;
+                        const time = Math.floor(Math.random() * 10) + 5;
+                        return {
+                            question: `Un objeto recorre ${distance} m en ${time} s. ¿Cuál es su velocidad promedio?`,
+                            variables: { distance, time },
+                            answer: distance / time,
+                            unit: 'm/s',
+                            formula: 'v = d/t',
+                            explanation: `Para encontrar la velocidad promedio, divide la distancia recorrida (${distance} m) entre el tiempo que tomó (${time} s). La fórmula es v = d/t.`
+                        };
+                    }
+                }
+            ],
+            medium: [
+                {
+                    type: 'force',
+                    generate: () => {
+                        const mass = Math.floor(Math.random() * 10) + 1;
+                        const acceleration = Math.floor(Math.random() * 5) + 2;
+                        return {
+                            question: `Un objeto de ${mass} kg se acelera a ${acceleration} m/s². ¿Cuál es la fuerza neta aplicada?`,
+                            variables: { mass, acceleration },
+                            answer: mass * acceleration,
+                            unit: 'N',
+                            formula: 'F = ma',
+                            explanation: `Para calcular la fuerza, usa la fórmula F = ma, donde m es la masa (${mass} kg) y a es la aceleración (${acceleration} m/s²).`
+                        };
+                    }
+                }
+            ],
+            hard: [
+                {
+                    type: 'momentum',
+                    generate: () => {
+                        const mass1 = Math.floor(Math.random() * 5) + 1;
+                        const velocity1 = Math.floor(Math.random() * 10) + 5;
+                        const mass2 = Math.floor(Math.random() * 5) + 1;
+                        return {
+                            question: `En una colisión elástica, un objeto de ${mass1} kg que se mueve a ${velocity1} m/s choca con un objeto en reposo de ${mass2} kg. ¿Cuál es la velocidad final del segundo objeto?`,
+                            variables: { mass1, velocity1, mass2 },
+                            answer: (2 * mass1 * velocity1) / (mass1 + mass2),
+                            unit: 'm/s',
+                            formula: 'v2f = (2m1v1i)/(m1 + m2)',
+                            explanation: `Para resolverlo, utiliza la fórmula v2f = (2m1v1i)/(m1 + m2), donde m1 es la masa del primer objeto y v1i su velocidad inicial.`
+                        };
+                    }
+                }
+            ]
+        };
+
+        function init() {
+            generateProblem();
+            updateHUD();
+        }
+
+        function getDifficulty() {
+            if (questionCount < 5) return 'easy';
+            if (questionCount < 10) return 'medium';
+            return 'hard';
+        }
+
+        function generateProblem() {
+            const difficulty = getDifficulty();
+            const problems = problemTypes[difficulty];
+            const problemType = problems[Math.floor(Math.random() * problems.length)];
+            currentProblem = problemType.generate();
+
+            document.getElementById('problem').innerHTML = `
+                <h3>Problema de Física - Nivel ${currentLevel}</h3>
+                <p>${currentProblem.question}</p>
+            `;
+
+            document.getElementById('inputs').innerHTML = `
+                <div class="input-group">
+                    <label>Tu respuesta (${currentProblem.unit}): </label>
+                    <input type="number" id="answer" step="0.01">
+                </div>
+            `;
+
+            document.getElementById('formula-reference').innerHTML = `
+                <h4>Fórmula:</h4>
+                <p>${currentProblem.formula}</p>
+            `;
+            document.getElementById('explanation').style.display = 'none'; // Ocultar explicación
+            document.getElementById('correctMessage').style.display = 'none'; // Ocultar mensaje de respuesta correcta
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseFloat(document.getElementById('answer').value);
+            if (userAnswer === currentProblem.answer) {
+                score += 10;
+                questionCount++; // Incrementar el contador de preguntas
+                document.getElementById('correctMessage').style.display = 'block'; // Mostrar mensaje de respuesta correcta
+                setTimeout(() => {
+                    document.getElementById('correctMessage').style.display = 'none'; // Ocultar mensaje después de 2 segundos
+                    generateProblem(); // Generar nuevo problema
+                }, 2000);
+            } else {
+                lives--;
+                questionCount++; // Incrementar el contador de preguntas
+                document.getElementById('explanation').style.display = 'block'; // Mostrar explicación en caso de error
+                document.getElementById('explanation').innerHTML = currentProblem.explanation;
+
+                if (lives <= 0) {
+                    endGame();
+                } else {
+                    updateHUD();
+                }
+            }
+            updateHUD();
+        }
+
+        function updateHUD() {
+            document.getElementById('level').innerText = currentLevel;
+            document.getElementById('lives').innerText = lives;
+            document.getElementById('score').innerText = score;
+        }
+
+        function endGame() {
+            document.getElementById('finalScore').innerText = score;
+            document.getElementById('gameOverModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('gameOverModal').style.display = 'none';
+        }
+
+        function resetGame() {
+            currentLevel = 1;
+            lives = 3;
+            score = 0;
+            questionCount = 0; // Reiniciar contador de preguntas
+            document.getElementById('gameOverModal').style.display = 'none';
+            init();
+        }
+
+        // Iniciar el juego al cargar la página
+        window.onload = init;
+    </script>
+</body>
+</html>

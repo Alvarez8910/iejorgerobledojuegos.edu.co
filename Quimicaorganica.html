@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Química Orgánica - Quiz</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Química Orgánica</h1>
+        <div id="puntuacion">Puntuación: 0</div>
+    </header>
+ 
+    <main>
+
+        <!-- Tema: Química Orgánica -->
+<section class="tema" id="temaQuimicaOrganica" style="display: none;">
+    <h2>Química Orgánica</h2>
+    <div class="pregunta">
+        <p>Pregunta 1: ¿Qué estudia la química orgánica?</p>
+        <input type="text" id="respuestaOrganica-1" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 1, 'los compuestos de carbono')">Verificar</button>
+        <p id="feedbackOrganica-1"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 2: ¿Qué son los hidrocarburos?</p>
+        <input type="text" id="respuestaOrganica-2" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 2, 'compuestos que contienen solo carbono e hidrógeno')">Verificar</button>
+        <p id="feedbackOrganica-2"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 3: ¿Cuál es la diferencia entre alcanos, alquenos y alquinos?</p>
+        <input type="text" id="respuestaOrganica-3" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 3, 'alcanos tienen enlaces simples, alquenos dobles, alquinos triples')">Verificar</button>
+        <p id="feedbackOrganica-3"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 4: ¿Qué son los isómeros?</p>
+        <input type="text" id="respuestaOrganica-4" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 4, 'compuestos con la misma fórmula molecular pero diferente estructura')">Verificar</button>
+        <p id="feedbackOrganica-4"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 5: ¿Cuál es el grupo funcional de los alcoholes?</p>
+        <input type="text" id="respuestaOrganica-5" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 5, 'OH')">Verificar</button>
+        <p id="feedbackOrganica-5"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 6: ¿Qué son los compuestos aromáticos?</p>
+        <input type="text" id="respuestaOrganica-6" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 6, 'compuestos que contienen anillos bencénicos')">Verificar</button>
+        <p id="feedbackOrganica-6"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 7: ¿Qué es una reacción de sustitución en química orgánica?</p>
+        <input type="text" id="respuestaOrganica-7" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 7, 'una reacción en la que un átomo es reemplazado por otro')">Verificar</button>
+        <p id="feedbackOrganica-7"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 8: ¿Cómo se nombran los alquenos según la IUPAC?</p>
+        <input type="text" id="respuestaOrganica-8" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 8, 'usando el sufijo -eno')">Verificar</button>
+        <p id="feedbackOrganica-8"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 9: ¿Cuál es el grupo funcional de los aldehídos?</p>
+        <input type="text" id="respuestaOrganica-9" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 9, 'CHO')">Verificar</button>
+        <p id="feedbackOrganica-9"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 10: ¿Qué es la polimerización?</p>
+        <input type="text" id="respuestaOrganica-10" autocomplete="off">
+        <button onclick="verificarRespuesta('QuimicaOrganica', 10, 'el proceso de formación de polímeros a partir de monómeros')">Verificar</button>
+        <p id="feedbackOrganica-10"></p>
+    </div>
+</section>
+
+    </main>
+
+    <script src="tema.js"></script>
+</body>
+</html>

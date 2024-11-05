@@ -1,0 +1,65 @@
+/* Configuración básica del estilo de página */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px; /* Limitar el ancho del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 10px; /* Espacio interno en las secciones */
+    border: 1px solid #4CAF50; /* Borde alrededor de las secciones */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #f9f9f9; /* Fondo claro para las secciones */
+}
+
+/* Estilos de navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center; /* Centrar la barra de navegación */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px; /* Espacio entre los enlaces */
+}
+
+nav a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold; /* Enfatizar los enlaces */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para resaltar ejemplos en el contenido */
+em {
+    font-style: italic;
+    color: #333;
+}

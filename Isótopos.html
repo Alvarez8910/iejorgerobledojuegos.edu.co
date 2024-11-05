@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isótopos - Quiz</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Isótopos</h1>
+        <div id="puntuacion">Puntuación: 0</div>
+    </header>
+ 
+    <main>
+
+        <!-- Tema: Isótopos -->
+<section class="tema" id="temaIsotopos" style="display: none;">
+    <h2>Isótopos</h2>
+    <div class="pregunta">
+        <p>Pregunta 1: ¿Qué son los isótopos?</p>
+        <input type="text" id="respuestaIsotopos-1" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 1, 'átomos del mismo elemento con diferente número de neutrones')">Verificar</button>
+        <p id="feedbackIsotopos-1"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 2: ¿Cómo se representa un isótopo?</p>
+        <input type="text" id="respuestaIsotopos-2" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 2, 'por el símbolo del elemento y su número de masa')">Verificar</button>
+        <p id="feedbackIsotopos-2"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 3: ¿Qué diferencia hay entre los isótopos de un mismo elemento?</p>
+        <input type="text" id="respuestaIsotopos-3" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 3, 'diferente número de neutrones')">Verificar</button>
+        <p id="feedbackIsotopos-3"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 4: ¿Qué es el número de masa de un isótopo?</p>
+        <input type="text" id="respuestaIsotopos-4" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 4, 'la suma de protones y neutrones en el núcleo')">Verificar</button>
+        <p id="feedbackIsotopos-4"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 5: ¿Cómo afecta un isótopo radiactivo a la estabilidad nuclear?</p>
+        <input type="text" id="respuestaIsotopos-5" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 5, 'puede causar inestabilidad y desintegración')">Verificar</button>
+        <p id="feedbackIsotopos-5"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 6: ¿Cuál es un ejemplo de isótopo radiactivo?</p>
+        <input type="text" id="respuestaIsotopos-6" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 6, 'carbono-14')">Verificar</button>
+        <p id="feedbackIsotopos-6"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 7: ¿Qué isótopos se utilizan en la datación por carbono?</p>
+        <input type="text" id="respuestaIsotopos-7" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 7, 'carbono-12 y carbono-14')">Verificar</button>
+        <p id="feedbackIsotopos-7"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 8: ¿Cómo se diferencia un isótopo en la notación nuclear?</p>
+        <input type="text" id="respuestaIsotopos-8" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 8, 'por el número de masa junto al símbolo del elemento')">Verificar</button>
+        <p id="feedbackIsotopos-8"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 9: ¿Por qué algunos isótopos son más abundantes que otros?</p>
+        <input type="text" id="respuestaIsotopos-9" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 9, 'debido a su estabilidad nuclear')">Verificar</button>
+        <p id="feedbackIsotopos-9"></p>
+    </div>
+    <div class="pregunta">
+        <p>Pregunta 10: ¿Qué es la abundancia relativa de un isótopo?</p>
+        <input type="text" id="respuestaIsotopos-10" autocomplete="off">
+        <button onclick="verificarRespuesta('Isotopos', 10, 'la proporción de un isótopo en la naturaleza')">Verificar</button>
+        <p id="feedbackIsotopos-10"></p>
+    </div>
+</section>
+
+    </main>
+
+    <script src="tema.js"></script>
+</body>
+</html>

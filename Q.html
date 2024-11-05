@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Química</title>
+    <link rel="stylesheet" href="Q.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Juego de Química</h1>
+        <p>Puntaje: <span id="puntaje">0</span></p>
+    </header>
+    
+    <main>
+        <!-- Tema 1: Números de Oxidación -->
+        <section class="tema" id="tema1" style="display: none;">
+            <h2>Números de Oxidación</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es el número de oxidación?</p>
+                <input type="text" id="respuesta1-1"  autocomplete="off">
+                <button onclick="verificarRespuesta(1, 1, 'carga que tiene un átomo en un compuesto')">Verificar</button>
+                <p id="feedback1-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Cuál es el número de oxidación del oxígeno en la mayoría de los compuestos?</p>
+                <input type="text" id="respuesta1-2"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 2, '-2')">Verificar</button>
+                <p id="feedback1-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué número de oxidación tiene el hidrógeno en compuestos con metales?</p>
+                <input type="text" id="respuesta1-3"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 3, '+1')">Verificar</button>
+                <p id="feedback1-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Cuál es el número de oxidación de un ion con carga -1?</p>
+                <input type="text" id="respuesta1-4"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 4, '-1')">Verificar</button>
+                <p id="feedback1-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué regla se aplica a los metales en los compuestos?</p>
+                <input type="text" id="respuesta1-5"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 5, 'generalmente tienen números de oxidación positivos')">Verificar</button>
+                <p id="feedback1-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es el número de oxidación formal?</p>
+                <input type="text" id="respuesta1-6"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 6, 'es el número de oxidación que resulta al suponer que los electrones se comparten equitativamente')">Verificar</button>
+                <p id="feedback1-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Cuál es el número de oxidación de los halógenos en compuestos?</p>
+                <input type="text" id="respuesta1-7"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 7, '-1')">Verificar</button>
+                <p id="feedback1-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es un compuesto iónico?</p>
+                <input type="text" id="respuesta1-8"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 8, 'compuesto formado por la unión de cationes y aniones')">Verificar</button>
+                <p id="feedback1-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué se entiende por estado de oxidación?</p>
+                <input type="text" id="respuesta1-9"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 9, 'carga que tendría un átomo si los electrones fueran asignados de forma completa')">Verificar</button>
+                <p id="feedback1-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es un agente reductor?</p>
+                <input type="text" id="respuesta1-10"autocomplete="off">
+                <button onclick="verificarRespuesta(1, 10, 'sustancia que proporciona electrones y reduce el número de oxidación de otro')">Verificar</button>
+                <p id="feedback1-10"></p>
+            </div>
+            <button onclick="irATema(2)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 2: Balance de Ecuaciones -->
+        <section class="tema" id="tema2" style="display: none;">
+            <h2>Balance de Ecuaciones</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es el balanceo de una ecuación química?</p>
+                <input type="text" id="respuesta2-1"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 1, 'igualar el número de átomos de cada elemento en ambos lados')">Verificar</button>
+                <p id="feedback2-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Por qué es importante balancear ecuaciones?</p>
+                <input type="text" id="respuesta2-2"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 2, 'para cumplir la ley de conservación de la masa')">Verificar</button>
+                <p id="feedback2-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Cuál es el primer paso para balancear una ecuación?</p>
+                <input type="text" id="respuesta2-3"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 3, 'escribir la ecuación no balanceada')">Verificar</button>
+                <p id="feedback2-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué son los coeficientes en una ecuación química?</p>
+                <input type="text" id="respuesta2-4"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 4, 'números que se colocan delante de las sustancias para balancear')">Verificar</button>
+                <p id="feedback2-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué se debe hacer si hay un elemento en una sola sustancia?</p>
+                <input type="text" id="respuesta2-5"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 5, 'ajustar los coeficientes de esa sustancia')">Verificar</button>
+                <p id="feedback2-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Cómo se balancean los compuestos con oxígeno?</p>
+                <input type="text" id="respuesta2-6"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 6, 'generalmente se balancea al final')">Verificar</button>
+                <p id="feedback2-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es un sistema de ecuaciones?</p>
+                <input type="text" id="respuesta2-7"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 7, 'conjunto de ecuaciones que se resuelven simultáneamente')">Verificar</button>
+                <p id="feedback2-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Cuál es un ejemplo de ecuación química balanceada?</p>
+                <input type="text" id="respuesta2-8"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 8, '2H2 + O2 → 2H2O')">Verificar</button>
+                <p id="feedback2-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué significa el símbolo “→” en una ecuación química?</p>
+                <input type="text" id="respuesta2-9"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 9, 'indica la dirección de la reacción')">Verificar</button>
+                <p id="feedback2-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Cómo se puede verificar si una ecuación está balanceada?</p>
+                <input type="text" id="respuesta2-10"autocomplete="off">
+                <button onclick="verificarRespuesta(2, 10, 'contando los átomos de cada lado')">Verificar</button>
+                <p id="feedback2-10"></p>
+            </div>
+            <button onclick="irATema(3)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 3: Los Gases -->
+        <section class="tema" id="tema3" style="display: none;">
+            <h2>Los Gases</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es un gas ideal?</p>
+                <input type="text" id="respuesta3-1"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 1, 'un gas que sigue las leyes de los gases ideales perfectamente')">Verificar</button>
+                <p id="feedback3-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Cuál es la ecuación de estado de los gases ideales?</p>
+                <input type="text" id="respuesta3-2"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 2, 'PV = nRT')">Verificar</button>
+                <p id="feedback3-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué representa la letra R en la ecuación de gases ideales?</p>
+                <input type="text" id="respuesta3-3"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 3, 'la constante universal de los gases')">Verificar</button>
+                <p id="feedback3-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué es la presión en los gases?</p>
+                <input type="text" id="respuesta3-4"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 4, 'fuerza ejercida por las moléculas de gas en las paredes del recipiente')">Verificar</button>
+                <p id="feedback3-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué es la temperatura absoluta?</p>
+                <input type="text" id="respuesta3-5"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 5, 'temperatura medida en Kelvin')">Verificar</button>
+                <p id="feedback3-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué sucede con el volumen de un gas al aumentar la temperatura?</p>
+                <input type="text" id="respuesta3-6"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 6, 'el volumen aumenta')">Verificar</button>
+                <p id="feedback3-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es la ley de Boyle?</p>
+                <input type="text" id="respuesta3-7"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 7, 'la presión de un gas es inversamente proporcional a su volumen')">Verificar</button>
+                <p id="feedback3-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es la ley de Charles?</p>
+                <input type="text" id="respuesta3-8"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 8, 'el volumen de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback3-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué ocurre con la presión de un gas al disminuir su volumen?</p>
+                <input type="text" id="respuesta3-9"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 9, 'la presión aumenta')">Verificar</button>
+                <p id="feedback3-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es el principio de Avogadro?</p>
+                <input type="text" id="respuesta3-10"autocomplete="off">
+                <button onclick="verificarRespuesta(3, 10, 'volúmenes iguales de gases a la misma temperatura y presión contienen el mismo número de moléculas')">Verificar</button>
+                <p id="feedback3-10"></p>
+            </div>
+            <button onclick="irATema(4)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 4: Ley de Charles y Gay-Lussac -->
+        <section class="tema" id="tema4" style="display: none;">
+            <h2>Ley de Charles y Gay-Lussac</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué establece la ley de Charles?</p>
+                <input type="text" id="respuesta4-1"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 1, 'el volumen de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback4-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué es la ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta4-2">autocomplete="off"
+                <button onclick="verificarRespuesta(4, 2, 'la presión de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback4-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Cuál es la relación entre volumen y temperatura en la ley de Charles?</p>
+                <input type="text" id="respuesta4-3"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 3, 'V1/T1 = V2/T2')">Verificar</button>
+                <p id="feedback4-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Cuál es la relación entre presión y temperatura en la ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta4-4"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 4, 'P1/T1 = P2/T2')">Verificar</button>
+                <p id="feedback4-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué ocurre con el volumen al aumentar la temperatura en un gas ideal?</p>
+                <input type="text" id="respuesta4-5"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 5, 'el volumen aumenta')">Verificar</button>
+                <p id="feedback4-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué ocurre con la presión al aumentar la temperatura en un gas cerrado?</p>
+                <input type="text" id="respuesta4-6"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 6, 'la presión aumenta')">Verificar</button>
+                <p id="feedback4-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué se debe hacer al aplicar la ley de Charles?</p>
+                <input type="text" id="respuesta4-7"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 7, 'convertir la temperatura a Kelvin')">Verificar</button>
+                <p id="feedback4-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Cómo se utiliza la ley de Gay-Lussac en los calentadores de agua?</p>
+                <input type="text" id="respuesta4-8"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 8, 'la presión aumenta al calentar el agua')">Verificar</button>
+                <p id="feedback4-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué ocurre con los gases al ser enfriados?</p>
+                <input type="text" id="respuesta4-9"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 9, 'el volumen disminuye')">Verificar</button>
+                <p id="feedback4-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué se debe considerar al trabajar con gases en la atmósfera?</p>
+                <input type="text" id="respuesta4-10"autocomplete="off">
+                <button onclick="verificarRespuesta(4, 10, 'la presión atmosférica')">Verificar</button>
+                <p id="feedback4-10"></p>
+            </div>
+            <button onclick="irATema(5)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 5: Gases Ideales -->
+        <section class="tema" id="tema5" style="display: none;">
+            <h2>Gases Ideales</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué condiciones se asumen para un gas ideal?</p>
+                <input type="text" id="respuesta5-1"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 1, 'no hay interacciones entre moléculas y ocupan volumen despreciable')">Verificar</button>
+                <p id="feedback5-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Cuál es la relación entre moles, volumen y temperatura para gases ideales?</p>
+                <input type="text" id="respuesta5-2"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 2, 'n = PV/RT')">Verificar</button>
+                <p id="feedback5-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué es el comportamiento real de un gas?</p>
+                <input type="text" id="respuesta5-3"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 3, 'cuando se desvían de las leyes de los gases ideales')">Verificar</button>
+                <p id="feedback5-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué factores afectan el comportamiento de los gases?</p>
+                <input type="text" id="respuesta5-4"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 4, 'temperatura, presión y volumen')">Verificar</button>
+                <p id="feedback5-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué es el principio de Dalton?</p>
+                <input type="text" id="respuesta5-5"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 5, 'la presión total de una mezcla de gases es igual a la suma de las presiones parciales')">Verificar</button>
+                <p id="feedback5-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es el gas real?</p>
+                <input type="text" id="respuesta5-6"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 6, 'un gas que no se comporta como un gas ideal bajo ciertas condiciones')">Verificar</button>
+                <p id="feedback5-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es el modelo de gases ideales?</p>
+                <input type="text" id="respuesta5-7"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 7, 'una simplificación de las interacciones moleculares')">Verificar</button>
+                <p id="feedback5-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es la compresibilidad?</p>
+                <input type="text" id="respuesta5-8"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 8, 'la capacidad de un gas para reducir su volumen bajo presión')">Verificar</button>
+                <p id="feedback5-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es la temperatura de ebullición?</p>
+                <input type="text" id="respuesta5-9"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 9, 'la temperatura a la cual un líquido se convierte en gas')">Verificar</button>
+                <p id="feedback5-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es la presión parcial?</p>
+                <input type="text" id="respuesta5-10"autocomplete="off">
+                <button onclick="verificarRespuesta(5, 10, 'la presión que ejercería un gas si ocupase el mismo volumen solo')">Verificar</button>
+                <p id="feedback5-10"></p>
+            </div>
+            <button onclick="irATema(6)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 6: Soluciones -->
+        <section class="tema" id="tema6" style="display: none;">
+            <h2>Soluciones</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es una solución?</p>
+                <input type="text" id="respuesta6-1"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 1, 'una mezcla homogénea de dos o más sustancias')">Verificar</button>
+                <p id="feedback6-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué es el soluto?</p>
+                <input type="text" id="respuesta6-2"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 2, 'la sustancia que se disuelve en una solución')">Verificar</button>
+                <p id="feedback6-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué es el disolvente?</p>
+                <input type="text" id="respuesta6-3"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 3, 'la sustancia que disuelve al soluto')">Verificar</button>
+                <p id="feedback6-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué es la concentración de una solución?</p>
+                <input type="text" id="respuesta6-4"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 4, 'la cantidad de soluto en un volumen de disolvente')">Verificar</button>
+                <p id="feedback6-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué unidades se utilizan para expresar la concentración?</p>
+                <input type="text" id="respuesta6-5"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 5, 'molaridad, molalidad, fracción molar')">Verificar</button>
+                <p id="feedback6-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es la molaridad?</p>
+                <input type="text" id="respuesta6-6"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 6, 'número de moles de soluto por litro de solución')">Verificar</button>
+                <p id="feedback6-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es la molalidad?</p>
+                <input type="text" id="respuesta6-7"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 7, 'número de moles de soluto por kilogramo de disolvente')">Verificar</button>
+                <p id="feedback6-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es la dilución?</p>
+                <input type="text" id="respuesta6-8"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 8, 'proceso de añadir disolvente a una solución para reducir la concentración')">Verificar</button>
+                <p id="feedback6-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es un electrolito?</p>
+                <input type="text" id="respuesta6-9"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 9, 'sustancia que se disocia en iones en solución y conduce electricidad')">Verificar</button>
+                <p id="feedback6-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es una solución saturada?</p>
+                <input type="text" id="respuesta6-10"autocomplete="off">
+                <button onclick="verificarRespuesta(6, 10, 'una solución que contiene la máxima cantidad de soluto que puede disolverse')">Verificar</button>
+                <p id="feedback6-10"></p>
+            </div>
+            <button onclick="irATema(7)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 7: Unidades de Concentración -->
+        <section class="tema" id="tema7" style="display: none;">
+            <h2>Unidades de Concentración</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué mide la molaridad?</p>
+                <input type="text" id="respuesta7-1"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 1, 'moles de soluto por litro de solución')">Verificar</button>
+                <p id="feedback7-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué mide la molalidad?</p>
+                <input type="text" id="respuesta7-2"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 2, 'moles de soluto por kilogramo de disolvente')">Verificar</button>
+                <p id="feedback7-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué es la fracción molar?</p>
+                <input type="text" id="respuesta7-3"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 3, 'la relación entre los moles de un componente y los moles totales en la solución')">Verificar</button>
+                <p id="feedback7-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Cómo se calcula la molaridad?</p>
+                <input type="text" id="respuesta7-4"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 4, 'moles de soluto dividido por el volumen en litros de solución')">Verificar</button>
+                <p id="feedback7-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Cómo se calcula la molalidad?</p>
+                <input type="text" id="respuesta7-5"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 5, 'moles de soluto dividido por la masa en kilogramos de disolvente')">Verificar</button>
+                <p id="feedback7-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es un soluto fuerte?</p>
+                <input type="text" id="respuesta7-6"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 6, 'un soluto que se disocia completamente en iones en solución')">Verificar</button>
+                <p id="feedback7-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es un soluto débil?</p>
+                <input type="text" id="respuesta7-7"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 7, 'un soluto que se disocia parcialmente en iones en solución')">Verificar</button>
+                <p id="feedback7-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es la concentración de una solución?</p>
+                <input type="text" id="respuesta7-8"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 8, 'la cantidad de soluto en un volumen dado de disolvente')">Verificar</button>
+                <p id="feedback7-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Por qué es importante conocer la concentración en química?</p>
+                <input type="text" id="respuesta7-9"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 9, 'para entender la reactividad y propiedades de las sustancias')">Verificar</button>
+                <p id="feedback7-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué se necesita para preparar una solución?</p>
+                <input type="text" id="respuesta7-10"autocomplete="off">
+                <button onclick="verificarRespuesta(7, 10, 'disolvente y soluto en proporciones adecuadas')">Verificar</button>
+                <p id="feedback7-10"></p>
+            </div>
+            <button onclick="irATema(8)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 8: Cálculos Estequiométricos -->
+        <section class="tema" id="tema8" style="display: none;">
+            <h2>Cálculos Estequiométricos</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es la estequiometría?</p>
+                <input type="text" id="respuesta8-1"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 1, 'el estudio de las relaciones cuantitativas en una reacción química')">Verificar</button>
+                <p id="feedback8-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué se necesita para realizar cálculos estequiométricos?</p>
+                <input type="text" id="respuesta8-2"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 2, 'la ecuación balanceada de la reacción')">Verificar</button>
+                <p id="feedback8-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué es un mol?</p>
+                <input type="text" id="respuesta8-3"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 3, 'la cantidad de sustancia que contiene 6.022 x 10^23 entidades')">Verificar</button>
+                <p id="feedback8-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Cómo se calcula la masa molar?</p>
+                <input type="text" id="respuesta8-4"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 4, 'sumando las masas atómicas de los elementos en la fórmula')">Verificar</button>
+                <p id="feedback8-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Cómo se determina el reactivo limitante?</p>
+                <input type="text" id="respuesta8-5"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 5, 'comparando la cantidad de reactivos disponibles con la relación estequiométrica')">Verificar</button>
+                <p id="feedback8-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es un rendimiento porcentual?</p>
+                <input type="text" id="respuesta8-6"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 6, 'la cantidad de producto obtenido dividido por la cantidad teórica')">Verificar</button>
+                <p id="feedback8-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Qué es una reacción completa?</p>
+                <input type="text" id="respuesta8-7"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 7, 'una reacción donde todos los reactivos se convierten en productos')">Verificar</button>
+                <p id="feedback8-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué se requiere para que una reacción sea espontánea?</p>
+                <input type="text" id="respuesta8-8"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 8, 'un cambio en la energía que favorezca la formación de productos')">Verificar</button>
+                <p id="feedback8-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Cómo se aplica la ley de conservación de la masa en los cálculos estequiométricos?</p>
+                <input type="text" id="respuesta8-9"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 9, 'la masa total de reactivos es igual a la masa total de productos')">Verificar</button>
+                <p id="feedback8-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es la relación molar en estequiometría?</p>
+                <input type="text" id="respuesta8-10"autocomplete="off">
+                <button onclick="verificarRespuesta(8, 10, 'la proporción de moles entre reactivos y productos en la ecuación balanceada')">Verificar</button>
+                <p id="feedback8-10"></p>
+            </div>
+            <button onclick="irATema(9)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 9: Química Orgánica -->
+        <section class="tema" id="tema9" style="display: none;">
+            <h2>Química Orgánica</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué es un hidrocarburo?</p>
+                <input type="text" id="respuesta9-1"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 1, 'compuesto formado solo por carbono e hidrógeno')">Verificar</button>
+                <p id="feedback9-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Qué son los alcanos?</p>
+                <input type="text" id="respuesta9-2"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 2, 'hidrocarburos saturados con enlaces simples')">Verificar</button>
+                <p id="feedback9-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué son los alquenos?</p>
+                <input type="text" id="respuesta9-3"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 3, 'hidrocarburos insaturados con al menos un enlace doble')">Verificar</button>
+                <p id="feedback9-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué son los alquinos?</p>
+                <input type="text" id="respuesta9-4"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 4, 'hidrocarburos insaturados con al menos un enlace triple')">Verificar</button>
+                <p id="feedback9-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Qué es la isomería?</p>
+                <input type="text" id="respuesta9-5"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 5, 'la existencia de compuestos con la misma fórmula molecular pero diferente estructura')">Verificar</button>
+                <p id="feedback9-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es un isótopo?</p>
+                <input type="text" id="respuesta9-6"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 6, 'átomos del mismo elemento con diferente número de neutrones')">Verificar</button>
+                <p id="feedback9-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Cómo se clasifica la química orgánica?</p>
+                <input type="text" id="respuesta9-7"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 7, 'según la estructura y la función de los compuestos')">Verificar</button>
+                <p id="feedback9-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué son los grupos funcionales?</p>
+                <input type="text" id="respuesta9-8"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 8, 'grupos de átomos que determinan las propiedades de un compuesto orgánico')">Verificar</button>
+                <p id="feedback9-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es la nomenclatura en química orgánica?</p>
+                <input type="text" id="respuesta9-9"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 9, 'sistema de nombrar compuestos químicos según reglas establecidas')">Verificar</button>
+                <p id="feedback9-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué son los compuestos aromáticos?</p>
+                <input type="text" id="respuesta9-10"autocomplete="off">
+                <button onclick="verificarRespuesta(9, 10, 'compuestos que contienen anillos de benceno')">Verificar</button>
+                <p id="feedback9-10"></p>
+            </div>
+            <button onclick="irATema(10)">Siguiente Tema</button>
+        </section>
+
+        <!-- Tema 10: Nomenclatura de Alcanos, Alquenos y Alquinos -->
+        <section class="tema" id="tema10" style="display: none;">
+            <h2>Nomenclatura de Alcanos, Alquenos y Alquinos</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Cuál es la nomenclatura de un alcano de cinco carbonos?</p>
+                <input type="text" id="respuesta10-1"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 1, 'pentano')">Verificar</button>
+                <p id="feedback10-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Cuál es la nomenclatura de un alqueno de seis carbonos?</p>
+                <input type="text" id="respuesta10-2"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 2, 'hexeno')">Verificar</button>
+                <p id="feedback10-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Cuál es la nomenclatura de un alquino de tres carbonos?</p>
+                <input type="text" id="respuesta10-3"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 3, 'propino')">Verificar</button>
+                <p id="feedback10-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Cómo se identifica la posición de un doble enlace en un alqueno?</p>
+                <input type="text" id="respuesta10-4"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 4, 'con un número antes del nombre del alcano base')">Verificar</button>
+                <p id="feedback10-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Cómo se identifica la posición de un triple enlace en un alquino?</p>
+                <input type="text" id="respuesta10-5"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 5, 'con un número antes del nombre del alcano base')">Verificar</button>
+                <p id="feedback10-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Cuál es la nomenclatura de un alqueno de cuatro carbonos con un doble enlace en la posición 2?</p>
+                <input type="text" id="respuesta10-6"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 6, 'but-2-eno')">Verificar</button>
+                <p id="feedback10-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿Cuál es la nomenclatura de un alquino de cinco carbonos con un triple enlace en la posición 1?</p>
+                <input type="text" id="respuesta10-7"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 7, 'pent-1-ino')">Verificar</button>
+                <p id="feedback10-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Qué es un hidrocarburo cíclico?</p>
+                <input type="text" id="respuesta10-8"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 8, 'hidrocarburo con anillo en su estructura')">Verificar</button>
+                <p id="feedback10-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es un sustituyente en la nomenclatura?</p>
+                <input type="text" id="respuesta10-9"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 9, 'grupo de átomos que reemplaza un hidrógeno en un hidrocarburo')">Verificar</button>
+                <p id="feedback10-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Cómo se nominan los compuestos con múltiples grupos funcionales?</p>
+                <input type="text" id="respuesta10-10"autocomplete="off">
+                <button onclick="verificarRespuesta(10, 10, 'se priorizan los grupos funcionales según reglas de nomenclatura')">Verificar</button>
+                <p id="feedback10-10"></p>
+            </div>
+            <button onclick="finalizarJuego()">Finalizar Juego</button>
+        </section>
+   
+        <script>
+            // JavaScript para controlar la navegación y las respuestas
+            let temaActual = 1;
+
+            function irATema(tema) {
+                // Ocultar todos los temas
+                for (let i = 1; i <= 10; i++) {
+                    document.getElementById('tema' + i).style.display = 'none';
+                }
+                // Mostrar el tema seleccionado
+                document.getElementById('tema' + tema).style.display = 'block';
+                temaActual = tema;
+            }
+
+            function verificarRespuesta(tema, pregunta, respuestaCorrecta) {
+                const respuestaUsuario = document.getElementById(`respuesta${tema}-${pregunta}`).value.toLowerCase().trim();
+                const feedbackElement = document.getElementById(`feedback${tema}-${pregunta}`);
+                if (respuestaUsuario === respuestaCorrecta.toLowerCase()) {
+                    feedbackElement.textContent = "¡Correcto!";
+                    feedbackElement.style.color = "green";
+                } else {
+                    feedbackElement.textContent = "Incorrecto. La respuesta correcta es: " + respuestaCorrecta;
+                    feedbackElement.style.color = "red";
+                }
+            }
+
+            function finalizarJuego() {
+                alert("¡Gracias por jugar! ¡Esperamos que hayas aprendido!");
+                // Aquí puedes agregar lógica adicional para finalizar el juego o redirigir al usuario.
+            }
+
+            // Iniciar el juego mostrando el primer tema
+            irATema(1);
+        </script>
+         <script src="Q.js"></script>
+    </body>
+</html>

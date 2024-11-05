@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Gases - Quiz</title>
+    <link rel="stylesheet" href="tema.css">
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Quiz de Los Gases</h1>
+        <div id="puntuacion">Puntuación: 0</div>
+    </header>
+ 
+    <main>
+
+        <section class="tema" id="tema2" style="display: none;">
+            <h2>Los Gases</h2>
+            <div class="pregunta">
+                <p>Pregunta 1: ¿Qué establece la ley de Boyle?</p>
+                <input type="text" id="respuesta2-1" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 1, 'la presión de un gas es inversamente proporcional a su volumen')">Verificar</button>
+                <p id="feedback2-1"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 2: ¿Cómo se define la ley de Charles?</p>
+                <input type="text" id="respuesta2-2" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 2, 'el volumen de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback2-2"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 3: ¿Qué describe la ley de Gay-Lussac?</p>
+                <input type="text" id="respuesta2-3" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 3, 'la presión de un gas es directamente proporcional a su temperatura')">Verificar</button>
+                <p id="feedback2-3"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 4: ¿Qué es un gas ideal?</p>
+                <input type="text" id="respuesta2-4" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 4, 'un gas que sigue las leyes de los gases en todas las condiciones')">Verificar</button>
+                <p id="feedback2-4"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 5: ¿Cuál es la ecuación general de los gases ideales?</p>
+                <input type="text" id="respuesta2-5" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 5, 'pv = nrt')">Verificar</button>
+                <p id="feedback2-5"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 6: ¿Qué es la constante R en la ecuación de gases ideales?</p>
+                <input type="text" id="respuesta2-6" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 6, 'es la constante de los gases ideales')">Verificar</button>
+                <p id="feedback2-6"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 7: ¿En qué unidades se mide la presión en la ecuación de gases ideales?</p>
+                <input type="text" id="respuesta2-7" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 7, 'atmosferas o pascales')">Verificar</button>
+                <p id="feedback2-7"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 8: ¿Cómo afecta la temperatura a la energía cinética de las moléculas en un gas?</p>
+                <input type="text" id="respuesta2-8" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 8, 'a mayor temperatura, mayor energía cinética')">Verificar</button>
+                <p id="feedback2-8"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 9: ¿Qué es la presión parcial?</p>
+                <input type="text" id="respuesta2-9" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 9, 'es la presión ejercida por un gas en una mezcla de gases')">Verificar</button>
+                <p id="feedback2-9"></p>
+            </div>
+            <div class="pregunta">
+                <p>Pregunta 10: ¿Qué es el volumen molar de un gas en condiciones estándar?</p>
+                <input type="text" id="respuesta2-10" autocomplete="off">
+                <button onclick="verificarRespuesta(2, 10, 'es el volumen que ocupa un mol de gas a 0 grados celsius y 1 atm de presión')">Verificar</button>
+                <p id="feedback2-10"></p>
+            </div>
+            
+        </section>
+        
+    </main>
+
+    <script src="tema.js"></script>
+</body>
+</html>

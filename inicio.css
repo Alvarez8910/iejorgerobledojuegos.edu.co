@@ -1,0 +1,207 @@
+/* Estilos Generales */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #e1f5fe, #e8eaf6);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Contenedor Central */
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* Título Animado */
+.animated-title {
+    font-size: 2.5rem;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #3f51b5;
+}
+
+.animated-title span {
+    animation: colorCycle 3s infinite;
+    animation-delay: calc(var(--n) * 0.1s);
+}
+
+/* Animación de colores: verde, blanco, amarillo */
+@keyframes colorCycle {
+    0% { color: #32cd32; }  /* Verde */
+    33% { color: #044d2e; }    /* Blanco */
+    66% { color: #ffeb3b; } /* Amarillo */
+    100% { color: #32cd32; } /* Vuelve al verde */
+}
+
+/* Ajuste de retraso secuencial */
+.animated-title span:nth-child(1) { --n: 0; }
+.animated-title span:nth-child(2) { --n: 1; }
+.animated-title span:nth-child(3) { --n: 2; }
+/* Continúa el patrón para todas las letras */
+.animated-title span:nth-child(n) { --n: calc(n - 1); }
+
+/* Texto descriptivo */
+p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.matematicas {
+    background-color: #4caf50;
+}
+
+.quimica {
+    background-color: #ff5722;
+}
+
+.fisica {
+    background-color: #2196f3;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Átomos */
+.atom-container {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    animation: rotate 20s infinite linear;
+}
+
+.atom1 { top: 10%; left: 20%; }
+.atom2 { top: 30%; left: 70%; }
+.atom3 { top: 60%; left: 40%; }
+
+.nucleus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #ff5722;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit 6s linear infinite;
+}
+
+.orbit1 { width: 120px; height: 120px; }
+.orbit2 { width: 160px; height: 160px; }
+
+.electron {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #2196f3;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Figuras Geométricas */
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid #3f51b5;
+    animation: float 6s infinite ease-in-out;
+}
+
+.triangle1 { top: 20%; left: 80%; }
+.triangle2 { top: 50%; right: 10%; border-bottom-color: #ff9800; }
+
+/* Reglas */
+.ruler {
+    position: absolute;
+    background-color: #3f51b5;
+    opacity: 0.7;
+}
+
+.ruler-vertical1, .ruler-vertical2 { width: 5px; height: 100px; }
+.ruler-horizontal1, .ruler-horizontal2 { width: 100px; height: 5px; }
+
+.ruler-vertical1 { top: 15%; left: 10%; }
+.ruler-horizontal1 { top: 40%; left: 50%; }
+.ruler-vertical2 { top: 60%; right: 20%; }
+.ruler-horizontal2 { bottom: 20%; left: 25%; }
+
+/* Números */
+.number {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    animation: floatNumbers 5s infinite ease-in-out;
+}
+
+.number1 { top: 15%; left: 50%; }
+.number2 { top: 70%; left: 30%; }
+.number3 { bottom: 10%; right: 20%; }
+
+/* Animaciones */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes floatNumbers {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

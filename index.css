@@ -1,0 +1,88 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Fuente legible */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 0; /* Sin márgenes por defecto */
+    padding: 0; /* Sin relleno por defecto */
+}
+
+/* Estilos de navegación */
+nav {
+    background-color: #4CAF50; /* Color de fondo */
+    padding: 10px 0; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
+}
+
+nav ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin márgenes */
+}
+
+nav ul li {
+    display: inline; /* Mostrar en línea */
+    margin-right: 20px; /* Espacio entre elementos */
+}
+
+nav a {
+    color: white; /* Color de texto */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Negrita */
+}
+
+nav a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color de texto */
+    text-align: center; /* Centrar texto */
+    padding: 20px 0; /* Espaciado interno */
+}
+
+header h1 {
+    margin: 0; /* Sin márgenes */
+}
+
+/* Estilos del contenido principal */
+main {
+    max-width: 800px; /* Ancho máximo */
+    margin: 20px auto; /* Centrar y espaciado superior/inferior */
+    padding: 20px; /* Espaciado interno */
+    background-color: #f9f9f9; /* Color de fondo */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 15px; /* Espaciado interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Esquinas redondeadas */
+    background-color: #fff; /* Fondo blanco */
+}
+
+h2 {
+    color: #4CAF50; /* Color de los títulos de sección */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color de texto */
+    text-align: center; /* Centrar texto */
+    padding: 10px 0; /* Espaciado interno */
+    position: relative; /* Posición relativa para el pie */
+}
+
+footer p {
+    margin: 0; /* Sin márgenes */
+}
+
+/* Estilos para resaltar ejemplos en el contenido */
+em {
+    font-style: italic; /* Estilo cursivo */
+    color: #333; /* Color del texto */
+}
